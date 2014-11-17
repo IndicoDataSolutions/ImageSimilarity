@@ -6,7 +6,7 @@ function gen_html(i){
   html += istr
   html += '" src="imgs/'
   html += istr 
-  html += '.png" height="64" width="64" similarity="'
+  html += '.png" height="64" width="64" distance="'
   html += istr
   html += '">'
   return html
@@ -35,7 +35,7 @@ $(window).load(function(){
 
     var $container = $('#container').isotope({
       getSortData: {
-        similarity: '[similarity]'
+        distance: '[distance]'
       }
     });
 
@@ -43,12 +43,14 @@ $(window).load(function(){
       compare_idx = $(this).attr('id');
 
       for (var idx=0; idx < 250; idx++){
-        dist =  euclidean(features[compare_idx], features[idx]);
-        $("#"+idx.toString()).attr('similarity', dist);
+        distance =  euclidean(features[compare_idx], features[idx]);
+        $("#"+idx.toString()).attr('distance', distance);
       }
 
       $container.isotope( 'updateSortData', $container.children() );
-      $container.isotope({ sortBy: 'similarity'});
+      // low distance in feature space is equivalent to high similarity
+      // since sort from low to high, most similar results are first
+      $container.isotope({ sortBy: 'distance'});
     });
   });
   
