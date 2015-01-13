@@ -1,7 +1,7 @@
 ImageSimilarity
 ===============
 
-This demo uses the `image_features` API to sort images based on similarity.
+This demo uses the [Indico](http://www.indico.io/) `image_features` API to sort images based on similarity.
 
 ## Getting Started with the Sample Data
 
