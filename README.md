@@ -1,4 +1,4 @@
-ImageSimilarity
+IImageSimilarity
 ===============
 
 This demo uses the [Indico](http://www.indico.io/) `image_features` API to sort images based on similarity.
@@ -15,19 +15,33 @@ Fire up your test server using SimpleHTTPServer (or equivalent):
 
 See the demo at `localhost:8000/similarity.html`!
 
+### Sort by Color
+
 Click on any image to trigger sorting based on similarity to that image.
 
-The initial view (limited in this readme to 10 items) will look something like this:
+The initial view will look something like this:
 
-![Initial View!](example/initial_view.png)
+![Initial View!](example/initial_view_big.png)
 
-Clicking on one of the more brownish images triggers a resort, which looks something like so, with the target item first:
+Clicking on one of the more brownish images triggers a resort. Limiting the data to ten images, the result looks something like so, with the target item first:
 
 ![Brownish Things!](example/brownish_things.png)
 
 Similar for the clicking one of the bluer items:
 
 ![Blueish Things!](example/blueish_things.png)
+
+## Image Recognition: Beyond Color
+
+Loading the full 250 image set, you can truly experience the power of the Indico API. 
+
+Click on a horse to sort by general horseyness. Note that it recognizes a brown horse on brown background even though the initial image was mostly green:
+
+![Horseyness](example/horseyness.png)
+
+Or a car to sort by similarity to automobile-shaped items:
+
+![carness](example/carness.png)
 
 ## How it Works
 
