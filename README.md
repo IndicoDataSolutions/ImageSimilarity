@@ -1,4 +1,4 @@
-IImageSimilarity
+ImageSimilarity
 ===============
 
 This demo uses the [Indico](http://www.indico.io/) `image_features` API to sort images based on similarity.
@@ -11,7 +11,7 @@ Clone the repo:
 
 Fire up your test server using SimpleHTTPServer (or equivalent):
 
-`python -m SimpleHTTPServer`
+`cd ImageSimilarity && python -m SimpleHTTPServer`
 
 See the demo at `localhost:8000/similarity.html`!
 
